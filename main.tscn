@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://orgxfkynvvn"]
+
+[ext_resource type="Theme" uid="uid://blyh6uqaquuc7" path="res://ui/theme.tres" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://da14tseci2ius" path="res://main.gd" id="2_0xm2m"]
+[ext_resource type="FontFile" uid="uid://djhh755ih20ps" path="res://ui/fonts/jetbrainsmono/JetBrainsMono-ExtraBold.ttf" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bmaxmyt5384we" path="res://ui/icon.bmp" id="4_1bvp3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h2yge"]
+blend_mode = 3
+
+[sub_resource type="Gradient" id="Gradient_1bvp3"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lquwl"]
+gradient = SubResource("Gradient_1bvp3")
+width = 256
+height = 256
+fill_to = Vector2(0.75, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 16
+
+[node name="Main" type="Control" unique_id=1308677602]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ig7tw")
+script = ExtResource("2_0xm2m")
+metadata/_edit_lock_ = true
+
+[node name="SideBar" type="ColorRect" parent="." unique_id=1787479845]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 320.0
+grow_vertical = 2
+color = Color(0.06612933, 0.027970018, 0.06612985, 1)
+metadata/_edit_lock_ = true
+
+[node name="VBox" type="VBoxContainer" parent="SideBar" unique_id=585006393]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = 16.0
+offset_right = 140.0
+offset_bottom = 390.0
+grow_horizontal = 2
+theme_override_constants/separation = 16
+metadata/_edit_lock_ = true
+
+[node name="FileCategoryLabel" type="Label" parent="SideBar/VBox" unique_id=145754226]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_h2yge")
+theme_override_font_sizes/font_size = 18
+text = "File"
+horizontal_alignment = 1
+
+[node name="LoadMask" type="Button" parent="SideBar/VBox" unique_id=1487516230]
+layout_mode = 2
+text = "Load shape (mask) from
+clipboard (16x16 pixels)"
+
+[node name="SaveSVG" type="Button" parent="SideBar/VBox" unique_id=662848538]
+layout_mode = 2
+text = "Copy SVG text to
+clipboard"
+
+[node name="HSeparator" type="HSeparator" parent="SideBar/VBox" unique_id=343283990]
+layout_mode = 2
+
+[node name="GradientCategoryLabel" type="Label" parent="SideBar/VBox" unique_id=1810208531]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_h2yge")
+theme_override_font_sizes/font_size = 18
+text = "Gradient Settings"
+horizontal_alignment = 1
+
+[node name="ColorA" type="HBoxContainer" parent="SideBar/VBox" unique_id=1419317202]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="SideBar/VBox/ColorA" unique_id=820390015]
+layout_mode = 2
+text = "Color #1:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="SideBar/VBox/ColorA" unique_id=730425854]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Color A"
+color = Color(1, 0.99607843, 0.72156864, 1)
+
+[node name="ColorB" type="HBoxContainer" parent="SideBar/VBox" unique_id=64114873]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="SideBar/VBox/ColorB" unique_id=604638567]
+layout_mode = 2
+text = "Color #2:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="SideBar/VBox/ColorB" unique_id=2127527064]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Color A"
+color = Color(1, 0, 0, 1)
+
+[node name="FromPos" type="HBoxContainer" parent="SideBar/VBox" unique_id=305904646]
+unique_name_in_owner = true
+modulate = Color(1, 0.5, 0.5, 1)
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="SideBar/VBox/FromPos" unique_id=1347835582]
+layout_mode = 2
+text = "Gradient start:"
+
+[node name="SpinBoxX" type="SpinBox" parent="SideBar/VBox/FromPos" unique_id=2116293584]
+layout_mode = 2
+max_value = 15.0
+suffix = "x"
+
+[node name="SpinBoxY" type="SpinBox" parent="SideBar/VBox/FromPos" unique_id=933529419]
+layout_mode = 2
+max_value = 15.0
+suffix = "y"
+
+[node name="ToPos" type="HBoxContainer" parent="SideBar/VBox" unique_id=708974985]
+unique_name_in_owner = true
+modulate = Color(0.5, 0.5, 1, 1)
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="SideBar/VBox/ToPos" unique_id=24891765]
+layout_mode = 2
+text = "Gradient end:"
+
+[node name="SpinBoxX" type="SpinBox" parent="SideBar/VBox/ToPos" unique_id=465615274]
+layout_mode = 2
+max_value = 15.0
+suffix = "x"
+
+[node name="SpinBoxY" type="SpinBox" parent="SideBar/VBox/ToPos" unique_id=2068534804]
+layout_mode = 2
+max_value = 15.0
+value = 15.0
+suffix = "y"
+
+[node name="GradientPosPreview" type="TextureRect" parent="SideBar/VBox" unique_id=108083692]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PrintLabel" type="Label" parent="SideBar" unique_id=495841153]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 576.0
+offset_right = -8.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Viewport" type="CenterContainer" parent="." unique_id=1074276007]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="BoundsOutline" type="ColorRect" parent="Viewport" unique_id=734454603]
+custom_minimum_size = Vector2(258, 258)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="BoundsInner" type="ColorRect" parent="Viewport" unique_id=132753292]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Icon" type="TextureRect" parent="Viewport" unique_id=1008834422]
+texture_filter = 1
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture = ExtResource("4_1bvp3")
+
+[node name="Gradient" type="TextureRect" parent="Viewport" unique_id=845321896]
+material = SubResource("CanvasItemMaterial_h2yge")
+layout_mode = 2
+texture = SubResource("GradientTexture2D_lquwl")
+
+[connection signal="pressed" from="SideBar/VBox/LoadMask" to="." method="_on_load_mask_pressed"]
+[connection signal="pressed" from="SideBar/VBox/SaveSVG" to="." method="_on_save_svg_pressed"]

@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="bitmap-to-gradient-svg"
+run/main_scene="uid://orgxfkynvvn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="uid://d1dwk2o7b7lsy"
+
+[audio]
+
+driver/driver="Dummy"
+
+[display]
+
+window/size/viewport_width=900
+window/size/viewport_height=700
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
