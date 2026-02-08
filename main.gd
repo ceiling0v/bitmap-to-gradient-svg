@@ -64,8 +64,7 @@ func _on_save_svg_pressed() -> void:
 		for y in img.get_height():
 			var col = img.get_pixel(x, y)
 			if not col == Color.BLACK and not col.a == 0.0:
-				var rect = '<rect x="%s"  y="%s"  width="1" height="1" fill="white"/>' % [x, y]
-				rects_text += "\n      " + rect
+				rects_text += '<rect x="%s"  y="%s"  width="1" height="1" fill="white"/>' % [x, y]
 	svg = svg.replace("TEMPLATE:CUTOUT", rects_text)
 	
 	# Copy the SVG text
